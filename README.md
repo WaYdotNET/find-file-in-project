@@ -30,6 +30,13 @@ You're advised to bind it to some global key combination.
 
 `(global-set-key (kbd "C-x C-M-f") 'find-file-in-project)`
 
+Todo
+----------
+- caching
+- make the project root discovery mechanism as generic as possible
+- enable some on-the-fly filtering options for project files
+- provide a wrapper around grep that's aware of the project's root
+
 Enjoy!
 
 Bozhidar
