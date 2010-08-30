@@ -89,7 +89,7 @@ mostly VCS related(Git, SVN, etc.)")
 
 (defvar ffip-project-ignored-folders
   nil
-  "A string of all directories in the project to be ignored.
+  "A list of all directories in the project to be ignored.
 It should be set in .dir-locals.el in the root of the project.
 The folders listed there will be added to the ones in the list
 `ffip-ignored-folders'")
@@ -165,10 +165,8 @@ directory they are found in so that they are unique."
              ;; combine the global ignore list with the folders ignored
              ;; in the project(if any)
              (append ffip-ignored-folders
-                     (if ffip-project-ignored-folders
-                         (split-string ffip-project-ignored-folders)
-                       nil)) " -o ")
-  )
+                     ffip-project-ignored-folders)
+             " -o "))
 
 (defun ffip-join-patterns ()
   "Turn `ffip-paterns' into a string that `find' can use."
